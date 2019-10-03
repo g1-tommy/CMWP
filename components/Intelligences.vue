@@ -60,8 +60,8 @@ export default {
       })
     },
     int_type (type) {
-      if (type === 'illegality') return '정책'
-      else if (type === 'trend') return '동향'
+      if (type === 'illegality') return '위법의심'
+      else if (type === 'trend') return '특이동향'
     },
     getViewer (link) {
       return `javascript:location.href = '/service/intelligences/report/view?id=${link}'`

@@ -2,7 +2,7 @@
    <main>
         <div class="container-wrapper">
             <header data-role="app-title">커뮤니티게시물<br /><strong>특이동향 리스트</strong></header>
-            <div class="grid grid-half">
+            <div class="grid grid-half" v-if="getCount.reduce((a, b) => a + b) !== 0">
               <div data-role="intDescription" class="uk-card uk-card-default uk-card-body" v-if='!chkError'>
                   <h2 class="uk-card-title uk-text-primary" style="font-size: 3rem; text-shadow: 3px 3px 10px rgba(0,0,0,.15);"><i class="fas fa-file-invoice"></i></h2>
                   <span class="uk-label uk-label-danger uk-position-small uk-position-top-right">등록된 게시물</span>
@@ -32,6 +32,7 @@
                   </div>
               </div>
             </div>
+            <Message icon="fas fa-exclamation-triangle" message="데이터가 없습니다." alert="uk-alert-danger" v-else :class="{ 'valign-center': true, 'full-width': true }" />
             <Message icon="fas fa-exclamation-triangle" message="데이터베이스 연결에 실패하였습니다." alert="uk-alert-danger" v-show="chkError" :class="{ 'valign-center': true, 'full-width': true }" />
             <script v-if='chkError'>swal({ type: 'error', title: '데이터베이스 연결에 실패하였습니다.', width: 750, confirmButtonText: `<i class='fas fa-check-circle'></i> 확인`, footer: '<p>데이터베이스 정상 동작 여부를 확인하시기 바랍니다.</p>' })</script>
             <Intelligences v-else />

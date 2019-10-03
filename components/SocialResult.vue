@@ -120,7 +120,7 @@ export default {
         axios.get('/api/v2/service/screenshot?url=' + encodeURI(item.link))
           .then(response => {
             swal.close()
-             if (response.status === 200) {
+            if (response.status === 200) {
               axios.post(`/api/v2/intelligences/`, { identifier: btoa(encodeURI(item.link)), item: item, screenshot: response.data.result })
               .then(sRes => {
                 if (sRes.status === 201) {
