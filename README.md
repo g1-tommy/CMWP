@@ -2,6 +2,8 @@
 
 Community Monitoring Works Portal (V2)
 
+**CMWP는 CIWP(in Private Repo)의 revised version으로, 현재도 개선된 기능을 개발하고 있는 상황입니다.**
+
 > 국내 유명 인터넷 커뮤니티 게시물 통합 수집 및 특이 게시물 보관, 보고서 변환, 데이터 분석 시각화 기능 제공
 >
 > ### Prerequisites
